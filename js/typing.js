@@ -1,5 +1,5 @@
 var i = 0;
-var txt = '{Aniket_Chadalavada}';
+var txt = '{ThatCrispyToast}';
 var speed = 50;
 
 function typeWriter() {
