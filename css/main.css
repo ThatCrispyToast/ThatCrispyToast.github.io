@@ -7,12 +7,27 @@ html, body {
     background: linear-gradient(32deg, #ff0000, #0064ff);
     background-size: 400% 400%;
     animation: bggradient 9s ease infinite;
+    cursor: default;
 }
 
 @keyframes bggradient {
-    0%{background-position:33% 0%}
+    0%{background-position:33% 0}
     50%{background-position:68% 100%}
-    100%{background-position:33% 0%}
+    100%{background-position:33% 0}
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #888;
+}
+
+::selection {
+    color: #333;
+    background: #bbb;
 }
 
 .terminal {
@@ -26,7 +41,7 @@ html, body {
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
-    user-select: none;
+    /*user-select: none;*/
 }
 
 .text-window {
@@ -38,6 +53,7 @@ html, body {
     color: #bbb;
     font-weight: 600;
     padding: 10px;
+    overflow-y: scroll;
 }
 
 /*.text-window:after {*/
@@ -59,10 +75,10 @@ html, body {
 .tab {
     position: absolute;
     background-color: #0C0C0C;
-    top: 4px;
-    left: 9px;
+    top: 0.7%;
+    left: 1.4%;
     border-radius: 5px;
-    height: 35px;
+    height: 5%;
     width: 60px;
     z-index: 1;
     color: white;
@@ -70,9 +86,9 @@ html, body {
 
 .tab img {
     position: absolute;
-    top: 5px;
-    left: 6px;
-    height: 60%;
+    top: 14%;
+    left: 15%;
+    height: 65%;
 }
 
 .tab a {
@@ -92,4 +108,13 @@ html, body {
     left: 37px;
     padding-left: 3px;
     padding-right: 3px;
+}
+
+#maincontent a {
+    color: #ccc !important;
+}
+
+#maincontent a:hover {
+    color: #333 !important;
+    background-color: #ccc !important;
 }
