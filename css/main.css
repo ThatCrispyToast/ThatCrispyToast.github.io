@@ -9,6 +9,11 @@ html, body {
     animation: bggradient 9s ease infinite;
     cursor: default;
 }
+@media only screen and (max-width: 900px) {
+    body {
+        font-size: 0.7em;
+    }
+}
 
 @keyframes bggradient {
     0%{background-position:33% 0}
@@ -55,13 +60,6 @@ html, body {
     padding: 10px;
     overflow-y: scroll;
 }
-
-/*.text-window:after {*/
-/*    content: "|";*/
-/*    font-weight: 50;*/
-/*    opacity: 50%;*/
-/*    animation: 1s blink step-end infinite;*/
-/*}*/
 
 @keyframes blink {
     from, to {
@@ -110,11 +108,11 @@ html, body {
     padding-right: 3px;
 }
 
-#maincontent a {
+#maincontent a,.typedlink {
     color: #ccc !important;
 }
 
-#maincontent a:hover {
+#maincontent a:hover,.typedlink:hover {
     color: #333 !important;
     background-color: #ccc !important;
 }

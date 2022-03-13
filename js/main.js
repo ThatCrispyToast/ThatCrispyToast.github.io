@@ -18,13 +18,17 @@ const intro_text =
     "* A junior at <a href='https://www.forsyth.k12.ga.us/alliance' target='_blank' rel='noopener'>Alliance Academy for Innovation</a>.<br>" +
     "* Lead Developer for <a href='https://www.avengerrobotics.org/' target='_blank' rel='noopener'>FIRST Tech Challenge Team 14892.</a><br>" +
     "* Developer for <a href='https://www.avengerrobotics.org/' target='_blank' rel='noopener'>FIRST Robotics Competition Team 7451.</a><br>" +
-    "To learn more about me run <a onclick='usertype(\"cat about.txt\", output, about_text);' style='cursor: pointer;'><u>cat about.txt</u></a>, to read about my projects run <a onclick='usertype(\"cat projects.txt\", output, projects_text);' style='cursor: pointer;'><u>cat projects.txt</u></a>.<hr>" +
-    "This portfolio is based on the UI of Windows Powershell and the functions of a classic Unix terminal."
+    "To learn more about me run <span class='typedlink' onclick='usertype(\"cat about.txt\", output, about_text);' style='cursor: pointer;'><u>cat about.txt</u></span>, to read about my projects run <span class='typedlink' onclick='usertype(\"cat projects.txt\", output, projects_text);' style='cursor: pointer;'><u>cat projects.txt</u></span>.<hr>" +
+    "This portfolio is based on the UI of Windows Powershell and the functions of a classic Unix terminal.";
+
+const secret_text = "\"/(DES)/LEWKEN\"<br>" +
+    "Hint: 2π";
 
 const files = {
     "about.txt": about_text,
     "intro.txt": intro_text,
-    "projects.txt": projects_text
+    "projects.txt": projects_text,
+    "secret.txt": secret_text
 }
 
 // Run Terminal Animation On Window Load
@@ -86,6 +90,14 @@ document.getElementById("userinput").addEventListener("keydown", function (event
     }
 });
 
+function ls() {
+    let out = "";
+    for (const filesKey in files) {
+        out += `<span class='typedlink' onclick='usertype(\"cat ${filesKey}\", output, files[\"${filesKey}"]);' style='cursor: pointer;'><u>${filesKey}</u></span> `;
+    }
+    output(out);
+}
+
 // Read Input from Terminal and Generate Appropriate Output
 function checkInput() {
     const uiHTML = document.getElementById("userinput").innerHTML;
@@ -95,20 +107,14 @@ function checkInput() {
         if (file) {
             output(file);
         } else {
-            output("File not found. Run <a onclick='usertype(\"ls\", output, undefined);' style='cursor: pointer;'><u>ls</u></a>");
+            output("File not found. Run <span class='typedlink' onclick='usertype(\"ls\", ls, 0);' style='cursor: pointer;'><u>ls</u></a>");
         }
 
     } else if (uiHTML.startsWith("start")) {
         open(uiHTML.substring(uiHTML.indexOf(" ") + 1));
 
     } else if (uiHTML.startsWith("ls")) {
-        let out = "";
-        for (const filesKey in files) {
-            console.log(filesKey);
-            console.log(files[filesKey]);
-            out += `<a onclick='usertype(\"cat ${filesKey}\", output, files[\"${filesKey}"]);' style='cursor: pointer;'><u>${filesKey}</u></a> `;
-        }
-        output(out);
+        ls()
 
     } else {
         if (uiHTML === "") {
