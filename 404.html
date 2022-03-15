@@ -12,9 +12,10 @@
     }
 
     html {
-      color: #888;
+      background-color: #0C0C0C;
+      color: #bbb;
       display: table;
-      font-family: sans-serif;
+      font-family: 'Consolas', monospace;
       height: 100%;
       text-align: center;
       width: 100%;
@@ -26,8 +27,14 @@
       margin: 2em auto;
     }
 
+    div {
+      border-style: solid;
+      border-radius: 5px;
+      padding: 50px;
+      margin-left: 25vw;
+      margin-right: 25vw;
+    }
     h1 {
-      color: #555;
       font-size: 2em;
       font-weight: 400;
     }
@@ -35,6 +42,23 @@
     p {
       margin: 0 auto;
       width: 280px;
+    }
+
+    a {
+      color: #ccc;
+      text-decoration: none;
+      border-style: solid;
+      border-radius: 5px;
+      border-width: 1px;
+      border-color: #ccc;
+      font-size: 1.5em;
+      padding: 5px;
+    }
+
+    a:hover {
+      color: #0c0c0c;
+      background-color: #bbb;
+      border-color: #0c0c0c;
     }
 
     @media only screen and (max-width: 280px) {
@@ -50,12 +74,22 @@
       }
 
     }
+
+    @media only screen and (max-width: 745px) {
+      div {
+        padding: 10vw;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
+  <div>
+    <h1>Page Not Found</h1>
+    <p>The page you were trying to view does not exist.<br><br><a href="/">Go Home</a></p>
+  </div>
 </body>
 
 </html>
