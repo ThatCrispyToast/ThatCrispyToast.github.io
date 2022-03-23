@@ -132,7 +132,7 @@ function checkInput() {
         if (uiHTML.startsWith(commandNames[commandName]) && !found) {
             Commands.prototype[commandNames[commandName]](uiHTML);
             document.getElementById("userinput").innerHTML = "";
-            found = True;
+            found = true;
         }
     }
     if (!found && uiHTML == "") {
