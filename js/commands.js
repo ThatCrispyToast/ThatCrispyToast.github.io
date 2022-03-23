@@ -43,7 +43,6 @@ class Commands {
     }
     
     help() {
-        console.log(Commands.commandlist);
         let out = "------------<br>";
         for (const commandsKey in Commands.commandlist) {
             out += commandsKey + " :|: " + Commands.commandlist[commandsKey] + "<br>";
