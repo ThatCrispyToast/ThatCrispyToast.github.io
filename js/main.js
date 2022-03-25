@@ -137,7 +137,7 @@ function checkInput() {
     }
     if (!found && uiHTML == "") {
         generateCursor(false);
-    } else {
+    } else if (!found) {
         output("Command not recognized. Run <span class='typedlink' onclick='usertype(\"help\", commands.help, 0);' style='cursor: pointer;'><u>help</u></span> for a list of valid commands.");
     }
 
